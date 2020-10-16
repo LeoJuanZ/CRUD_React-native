@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
-import Blogs from './app/components/Blogs';
-import Edit from './app/components/Edit';
-import Post from './app/components/Post';
+import Blogs from './app/pages/Blogs';
+import Edit from './app/pages/Edit';
+import Post from './app/pages/Post';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default class App extends Component {
   render(){
