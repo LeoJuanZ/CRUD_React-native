@@ -1,8 +1,11 @@
 import * as firebase from 'firebase';
+import firestore from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
+
+  // Initialize Firebase
+  firebase.initializeApp({
     apiKey: "AIzaSyB0IyDMEq4JXjxHyCugCcMoTIqG73zeh2Y",
     authDomain: "codenesta-2ea69.firebaseapp.com",
     databaseURL: "https://codenesta-2ea69.firebaseio.com",
@@ -11,10 +14,9 @@ import * as firebase from 'firebase';
     messagingSenderId: "325263210693",
     appId: "1:325263210693:web:f5e299af9e88f51a5158ac",
     measurementId: "G-ZV47TS4JD2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
+  });
+  const db = firebase.firestore();
+  export default db;
 // var firebaseConfig = {
 //     apiKey: "AIzaSyCXBnSa7UUFriUjwCCbMXGTMWMfpSR0laY",
 //     authDomain: "crud-react-native-f94e0.firebaseapp.com",
@@ -28,4 +30,4 @@ import * as firebase from 'firebase';
 //   // Initialize Firebase
 //   firebase.initializeApp(firebaseConfig);
 
-  export default firebase;
+  // export default firebase;
