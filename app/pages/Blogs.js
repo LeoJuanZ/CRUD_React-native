@@ -7,6 +7,7 @@ export default class Blogs extends Component {
         return (
             <View style={styles.container}>
               <Text>Open up App.js to start working on your app!</Text>
+              <Button title='Go to Post' onPress={() => this.props.navigation.navigate('Post')} />
               <Button title='Go to Edit' onPress={() => this.props.navigation.navigate('Edit')} />
             </View>
         );
@@ -19,5 +20,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    padding: 5,
+  }
 });
