@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { Alert, Button, StyleSheet, Text, View } from 'react-native';
-import * as SQLite from 'expo-sqlite';
+import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Button, Input } from 'react-native-elements';
 import { TextInput } from 'react-native-gesture-handler';
+
+import * as SQLite from 'expo-sqlite';
 
 const db = SQLite.openDatabase('TestDB');
 
@@ -39,28 +41,38 @@ export default class Post extends Component {
 
   /* Mas componentes truchos de youtube */
 
-    render(){
-        return (
-            <View style={styles.container}>
-              <Text>Post Page</Text>
-              <TextInput
-                onChangeText={(val) => this.setState({ name: val })} value={this.state.name}
-                placeholder="Name"
-              />
-              <TextInput
-                onChangeText={(val) => this.setState({ age: val })} value={this.state.age}
-                placeholder="Age"
-              />
-              <Button
-                onPress= {() => {
-                  this.handleSave();
-                }}
-                title="Save information"
-              />
-            <StatusBar style="auto" />
-            </View>
-        );
-    }
+  render(){
+    return (
+      <View style={styles.container}>
+
+        <Text>Post Page</Text>
+
+        <Input
+          onChangeText={(val) => this.setState({ name: val })} value={this.state.name}
+          placeholder="Name"
+          leftIconContainerStyle={{ marginRight: 15 }}
+          inputContainerStyle={{ width: 330, marginTop: 45, marginLeft: 60 }}
+        />
+
+        <Input
+          onChangeText={(val) => this.setState({ age: val })} value={this.state.age}
+          placeholder="Age"
+          leftIconContainerStyle={{ marginRight: 15 }}
+          inputContainerStyle={{ width: 330, marginTop: 45, marginLeft: 60, marginBottom: 20 }}
+        />
+
+        <Button
+          onPress= {() => {
+            this.handleSave();
+          }}
+          title="Save information"
+        />
+
+        <StatusBar style="auto" />
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

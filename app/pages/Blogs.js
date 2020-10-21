@@ -2,16 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
+import ListItems from '../components/ListItems'
+
 export default class Blogs extends Component {
-    render(){
-        return (
-            <View style={styles.container}>
-              <Text>Open up App.js to start working on your app!</Text>
-              <Button title='Go to Post' onPress={() => this.props.navigation.navigate('Post')} />
-              <Button title='Go to Edit' onPress={() => this.props.navigation.navigate('Edit')} />
-            </View>
-        );
-    }
+  render(){
+    return (
+      <View style={styles.container}>
+
+        <ListItems />
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
